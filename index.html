@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Devpost Judge Certificate</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src=
+"https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js">
+	</script>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Devpost Judge Certificate</h1>
+            <p>Fill out the following form to request a certificate from Devpost</p>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <form>
+                    <div class="form-group">
+                        <label for="hackathon_name">Hackathon Name:</label>
+                        <input type="text" class="form-control" id="hackathon_name" name="hackathon_name" placeholder="Enter the hackathon name">
+                    </div>
+                    <div class="form-group">
+                        <label for="hackathon_date">Hackathon Date:</label>
+                        <input type="date" class="form-control" id="hackathon_date" name="hackathon_date">
+                    </div>
+                    <div class="form-group">
+                        <label for="first_name">First Name:</label>
+                        <input type="text" class="form-control" id="first_name" name="first_name" placeholder="Enter your first name">
+                    </div>
+                    <div class="form-group">
+                        <label for="last_name">Last Name:</label>
+                        <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Enter your last name">
+                    </div>
+                    <div class="form-group">
+                        <label for="judging_date">Judging Date:</label>
+                        <input type="date" class="form-control" id="judging_date" name="judging_date">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="num_projects">Number of projects:</label>
+                        <input type="number" class="form-control" id="num_projects" name="num_projects" placeholder="Enter the number of projects">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="winner1">Winner 1:</label>
+                        <input type="text" class="form-control" id="winner1" name="winner1" placeholder="Enter the winner 1 team">
+                    </div>
+                    <div class="form-group">
+                        <label for="winner2">Winner 2:</label>
+                        <input type="text" class="form-control" id="winner2" name="winner2" placeholder="Enter the winner 2 team">
+                    </div>
+                    <div class="form-group">
+                        <label for="winner3">Winner 3:</label>
+                        <input type="text" class="form-control" id="winner3" name="winner3" placeholder="Enter the winner 3 team">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Wishings for Developers:</label>
+                        <textarea class="form-control" id="message" name="message" rows="5" placeholder="Enter your message"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="creator_name">Hackathon Creator Name:</label>
+                        <input type="text" class="form-control" id="creator_name" name="creator_name" value="Creator Name" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="creator_email">Hackathon Creator Email:</label>
+                        <input type="email" class="form-control" id="creator_email" name="creator_email" value="creator@example.com" readonly>
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="generatePDF()">Get PDF</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+		function generatePDF() {
+			const { jsPDF } = window.jspdf;
+			const doc = new jsPDF();
+
+            const formData = {
+        hackathonName: document.getElementById('hackathon_name').value,
+        hackathonDate: document.getElementById('hackathon_date').value,
+        firstName: document.getElementById('first_name').value,
+        lastName: document.getElementById('last_name').value,
+        judgingDate: document.getElementById('judging_date').value,
+        numProjects: document.getElementById('num_projects').value,
+        winner1: document.getElementById('winner1').value,
+        winner2: document.getElementById('winner2').value,
+        winner3: document.getElementById('winner3').value,
+        email: document.getElementById('email').value,
+        message: document.getElementById('message').value,
+        creatorName: document.getElementById('creator_name').value,
+        creatorEmail: document.getElementById('creator_email').value
+    };
+
+    doc.setFontSize(12);
+
+Object.keys(formData).forEach((key, index) => {
+    console.log(`key: ${key}, index: ${index}, value: ${formData[key]}`);
+    doc.text(`${key}: ${formData[key]}`, 10, 10 + (index * 10));
+});
+
+console.log('saving pdf...');
+doc.save('Devpost_Judge_Certificate.pdf', { returnPromise: true }).then(() => {
+    const pdfUrl = doc.output('bloburl');
+    console.log('pdfUrl:', pdfUrl);
+    window.open(pdfUrl, '_blank');
+});	 
+		}		 
+	</script>	 
+    
+<!-- <script src="app.js"></script> -->
+
+</body>
+
+</html>
+
