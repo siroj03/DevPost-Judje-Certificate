@@ -1,0 +1,20 @@
+name: SofiAI Tests
+
+on: push
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Lint JS
+        run: npm run lint:js
+      
+      - name: Lint HTML
+        run: npm run lint:html
+        
