@@ -81,35 +81,38 @@
               />
             </div>
 
-            <div class="form-group">
-              <label for="winner1">Winner 1:</label>
-              <input
-                type="text"
-                class="form-control"
-                id="winner1"
-                name="winner1"
-                placeholder="Enter the winner 1 team"
-              />
-            </div>
-            <div class="form-group">
-              <label for="winner2">Winner 2:</label>
-              <input
-                type="text"
-                class="form-control"
-                id="winner2"
-                name="winner2"
-                placeholder="Enter the winner 2 team"
-              />
-            </div>
-            <div class="form-group">
-              <label for="winner3">Winner 3:</label>
-              <input
-                type="text"
-                class="form-control"
-                id="winner3"
-                name="winner3"
-                placeholder="Enter the winner 3 team"
-              />
+            <button type="button" class="btn btn-primary" id="add-winners-btn">Add Winners</button>
+            <div class="winners-container" style="display: none;">
+              <div class="form-group">
+                <label for="winner1">Winner 1:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="winner1"
+                  name="winner1"
+                  placeholder="Enter the winner 1 team"
+                />
+              </div>
+              <div class="form-group">
+                <label for="winner2">Winner 2:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="winner2"
+                  name="winner2"
+                  placeholder="Enter the winner 2 team"
+                />
+              </div>
+              <div class="form-group">
+                <label for="winner3">Winner 3:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="winner3"
+                  name="winner3"
+                  placeholder="Enter the winner 3 team"
+                />
+              </div>
             </div>
 
             <div class="form-group">
@@ -123,18 +126,8 @@
               />
             </div>
 
-            <div class="form-group">
-              <label for="message">Wishings for Developers:</label>
-              <textarea
-                class="form-control"
-                id="message"
-                name="message"
-                rows="5"
-                placeholder="Enter your message"
-              ></textarea>
-            </div>
-
-            <div class="form-group">
+            <!-- Hackathon's Creator's name and email -->
+            <!-- <div class="form-group">
               <label for="creator_name">Hackathon Creator Name:</label>
               <input
                 type="text"
@@ -145,6 +138,7 @@
                 readonly
               />
             </div>
+
             <div class="form-group">
               <label for="creator_email">Hackathon Creator Email:</label>
               <input
@@ -155,14 +149,15 @@
                 value="creator@example.com"
                 readonly
               />
-            </div>
+            </div> -->
+
             <button
               id="submitBtn"
               type="button"
               class="btn btn-primary"
               
             >
-              Get PDF
+              Get a certificate 
             </button>
           </form>
         </div>

@@ -1,0 +1,61 @@
+#user_name {
+    position: absolute; 
+    top: 49%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 50px;
+    width: 70%;
+    color: #0D2562;
+    text-transform: uppercase;
+    
+}
+img {
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 90%;
+}
+
+#date{
+    position: absolute; 
+    top: 68%; 
+    left: 51%; 
+    transform: translate(-50%, -50%);
+    width: 10%;
+    font: 10px;
+}
+
+#date_issue{
+    position: absolute; 
+    top: 82%; 
+    left: 76%; 
+    transform: translate(-50%, -50%);
+    width: 10%;
+    font: 12px;
+}
+
+#hackathon{
+    position: absolute; 
+    top: 61%; 
+    left: 51%; 
+    transform: translate(-50%, -50%);
+    width: 40%;
+    font: 100px;
+    text-align: center;
+    align-items: center;
+}
+
+/* button's position must be down left corener */
+#submitBtn{
+    position: absolute; 
+    top: 90%; 
+    left: 80%; 
+    transform: translate(-50%, -50%);
+    font: 12px;
+    text-align: center;
+    align-items: center;
+
+}
